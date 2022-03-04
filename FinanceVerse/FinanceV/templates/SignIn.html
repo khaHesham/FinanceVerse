@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../static/css/SignUp.css">
+</head>
+<body>
+ <div class="Container">
+       <div class="forms-container">
+           <div class="signin">
+                          <form method="post" action="" class="form-control"> 
+                              {{form.csrf_token}}
+                           <h2 class="title">
+                              Log in
+                           </h2> 
+
+                          <div class="Input-Field">
+                              <i class="fa fa-user"></i> 
+                              {{form.usernamee(class="form-control",placeholder="Username")}}
+                          </div>
+
+                          <div class="Input-Field">
+                               <i class="fa fa-lock"></i> 
+                               {{form.passwordd(class="form-control",placeholder="Password")}}          
+                         </div>
+
+                         <div >
+                            {{form.login(class="SubmittingBtn",type="submit",value="Login")}}
+                        
+                            
+                         </div>
+
+                         <p class="Social-text">
+                             Or Sign in with Social Platforms
+                         </p>
+                         <div class="social-media">
+                                <a href="https://www.facebook.com/" class="Social-Icon">
+                                    <i class="fa fa-facebook"></i>  
+                                </a>
+                                <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D" class="Social-Icon">
+                                    <i class="fa fa-twitter"></i>  
+                                </a>
+                                <a href="https://www.google.com/gmail" class="Social-Icon">
+                                    <i class="fa fa-google"></i>  
+                                </a>
+                                <a href="https://www.linkedin.com/login" class="Social-Icon">
+                                    <i class="fa fa-linkedin"></i>  
+                                </a>
+                         </div>
+
+                        </form>
+           </div>
+
+           <div class="signup">
+            <form method="POST" action="" class="form-control" > 
+                {{form2.csrf_token}}
+             <h2 class="title">
+                Sign Up
+             </h2> 
+
+             <div class="Input-Field">
+                <i class="fa fa-male"></i>  
+                {{form2.name(class="form-control",placeholder="Name")}}
+            </div>
+
+            <div class="Input-Field">
+                <i class="fa fa-user"></i>  
+                {{form2.username(class="form-control",placeholder="Username")}} 
+            </div>
+
+            <div class="Input-Field">
+                <i class="fa fa-phone"></i>  
+                {{form2.phone(class="form-control",placeholder="Phone")}}
+            </div>
+
+            <div class="Input-Field">
+                <i class="fa fa-bank"></i>  
+                {{form2.bank_acc(class="form-control",placeholder="Bank Account")}}
+            </div>
+
+            <div class="Input-Field">
+                <i class="fa fa-home"></i>  
+                {{form2.address(class="form-control",placeholder="Address")}}
+            </div>
+
+            <div class="Input-Field">
+                 <i class="fa fa-lock"></i>  
+                 {{form2.password1(class="form-control",placeholder="Password")}}
+           </div>
+
+           <div >
+            {{form2.signup(class="SubmittingBtn",type="submit",value="SIGN UP")}}
+           </div>
+
+           <p class="Social-text">
+               Or Sign Up with Social Platforms
+           </p>
+           <div class="social-media">
+                  <a href="https://www.facebook.com/" class="Social-Icon">
+                      <i class="fa fa-facebook"></i>  
+                  </a>
+                  <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D" class="Social-Icon">
+                      <i class="fa fa-twitter"></i>  
+                  </a>
+                  <a href="https://www.google.com/gmail" class="Social-Icon">
+                      <i class="fa fa-google"></i>  
+                  </a>
+                  <a href="https://www.linkedin.com/login" class="Social-Icon">
+                      <i class="fa fa-linkedin"></i>  
+                  </a>
+           </div>
+
+          </form>
+</div>
+
+<div class="panels-container">
+    <div class="left-panel panel">
+          <div class="content">
+             <h3>
+                 New Here ? :")
+             </h3>
+             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum mollitia officia earum cumque tempora illum? Consequatur optio molestiae nam? Iusto repudiandae quisquam laboriosam necessitatibus nemo quae maiores at, nihil quidem!</p>
+             <button class="btn transparent" id="sign-up-button"> Sign Up</button>
+          </div>
+    <img src="../static/imgs/undraw_new_entries_re_cffr.svg" alt="" class="image login_img">
+    </div>
+    
+
+    <div class="right-panel panel">
+        <div class="content">
+        <h3>
+            One of Us ?
+        </h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum mollitia officia earum cumque tempora illum? Consequatur optio molestiae nam? Iusto repudiandae quisquam laboriosam necessitatibus nemo quae maiores at, nihil quidem!</p>
+        <button class="btn transparent" id="sign-in-button"> Log In</button>
+      </div>
+      <img src="../static/imgs/undraw_login_re_4vu2.svg" alt="" class="image SignUp_img">
+    </div>
+
+
+
+
+
+
+
+
+</div>
+
+
+ </div>
+
+
+ {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+        
+        <div class="{{category}} show" id="Alert">
+            <span class="excl-circle"> <i class="fa fa-exclamation-circle"></i> </span>
+            <span class="msg"> {{ message }}</span>
+            <span class="close-btn" onclick="Hidemsg()"> <i class="fa fa-times"></i></span>
+        </div>
+        
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <script>
+        var OurButton=document.getElementsByClassName("btn");
+        var OurAlert=document.getElementById("Alert");
+        function Hidemsg(){
+            OurAlert.classList.add("hide");
+            OurAlert.classList.remove("show");
+        }
+    </script>
+
+
+
+
+
+
+
+
+   <script src="../static/js/Signup.js"></script> 
+</body>
+</html>

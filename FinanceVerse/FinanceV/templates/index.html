@@ -1,0 +1,400 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="Css Folder/main.css">
+</head>
+<body>
+      <div class="navbar">
+         <div class= "Container">
+             <a href="#">Finance<span>Verse</span></a> <!--here we write our link in href and between two tags we write the text that when you click on you go to the link
+              
+             <nav>
+                 <ul class="Primary_Nav">
+                     <li class="Current"><a href="#">Home</a></li>
+                     <li class="Current"><a href="#">Features</a></li>
+                     <li class="Current"><a href="#">Prices</a></li>
+                 </ul>
+                 <ul class="secondary_Nav">
+                    <li class="Current"><a href="#">Contact</a></li>
+                    <li class="Current"><a href="#">Go Premium</a></li>
+                    <li class="Current"><a href="#">Prices</a></li>
+                </ul>
+             </nav>
+         </div>
+      </div>
+ 
+    <section>
+        <div class="Container2">
+            <div class="Left-Column">
+              <p class ="subhead">
+                  It's Nitty &amp; Gritty
+              </p>
+            </div>
+        </div>
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    </section>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</body>
+</html>
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+    background:linear-gradient(to right,#72c77c,#58ca65,#3ec94e,#1cca30,#19b13d);
+    background-size:400%;
+    -webkit-text-fill-color:transparent;
+    -webkit-background-clip: text;
+    animation: animate 13s ease-out ;
+    animation-direction: reverse;
+
+    .header{
+    width:100%;
+    position: relative;
+}
+.header .logo i{
+    display: inline;
+    font-size: 25px;
+}
+.header h1:hover{
+    color:#0058af;
+}
+.header h1 .verse:hover{
+color:#19b13d;
+}
+
+.header h1{
+    background:linear-gradient(to right,#6dbbff,#6fb9fa,#4aaafd,#0088ff,#0058af);
+    background-size:400%;
+    font-weight: 600px;
+    -webkit-text-fill-color:transparent;
+    -webkit-background-clip: text;
+    animation: animate 15s ease-out infinite;
+    animation-direction: reverse;
+    margin-bottom: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.header h1 .verse{
+background:linear-gradient(to right,#72c77c,#58ca65,#3ec94e,#1cca30,#19b13d);
+background-size:400%;
+-webkit-text-fill-color:transparent;
+-webkit-background-clip: text;
+animation: animate 15s ease-out infinite ;
+animation-direction: reverse;
+cursor: pointer;
+}
+.navOne{
+    display:flex;
+    padding: 4% 4%;
+    justify-content: space-between;
+    align-items: center ;
+    position: fixed;
+    top :0;
+    width: 100%;
+    left:0;
+    transition: 0.6s;
+    z-index: 100;
+}
+.navOne img{
+    width:200px;
+
+}
+.navOne.sticky{
+    background: rgb(45, 44, 44);
+    padding: 0% 3.5%;
+    padding-top: 10px;
+}
+
+.nav-links{
+    flex:1;
+    text-align:right;
+    position: relative;
+    right:100px;
+    flex-direction: row;
+}
+.nav-links ul li{
+    list-style: none;
+    display:inline-block;
+    padding: 8px 10px;
+    position:static;
+    color:rgb(255, 255, 255);
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+.Specialbtn{
+    border:2px solid white;
+    padding:8px 10px;
+    border-radius: 3%;
+    color: white;
+    background:transparent;
+    text-decoration: none;
+    display:inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 15px;
+
+}
+
+.Specialbtn:hover{
+    border-color: #0088ff;
+    background:#0088ff;
+    transition: 0.7s;
+    color:rgb(255, 255, 255)
+}
+
+.nav-links ul li a{
+    color:seashell;
+    text-decoration: none;
+}
+.nav-links ul .normal::after{
+    content:'';
+    width:0%;
+    height:2px; 
+    background:#0088ff;
+    display:block;
+    margin: auto;
+    transition: 0.6s;
+}
+.nav-links ul .normal:hover::after{
+    width:100%
+}
+
+
+@keyframes animate {
+    0%{
+        background-position: 0%;
+    }
+    25%{
+        background-position: 100%;
+    }
+
+    50%{
+        background-position: 200%;
+    }
+    
+    75%{
+        background-position: 300%;
+    }
+    100%{
+        background-position: 400%;
+    }
+    
+}
+
+
+.verse{
+
+    text-decoration: none;
+}
+
+    <section class="header">
+        <nav class=navOne>
+            <div class="logo">
+               
+                </span>
+                <h1 class="logotext">
+                    <i class="fa fa-institution"></i>
+               <span>Finance</span><span class=verse>Ver$e</span>
+                </h1>
+                </a>
+            </div>
+
+            <div class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="" class="normal">Home</a> </li>
+                    <li><a href="" class="normal">About</a> </li>
+                    <li><a href="" class="normal">Course</a> </li>
+                    <li><a href="" class="normal">Blog</a> </li>
+                    <li><a href="SignIn.html" class="Specialbtn">Join Us</a> </li>
+                </ul>
+            </div>
+        </nav>
+    </section> 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceVer$e</title>
+    <link rel="stylesheet" href="../static/css/Main.css">
+    <meta name="viewport" content="with=device-width , initial-scale">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@1,100,400;1,95.4,465&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <div class="logo">
+               
+                </span>
+                <h1 class="logotext">
+                    <i class="fa fa-institution"></i>
+               <span>Finance</span><span class=verse>Ver$e</span>
+                </h1>
+                </a>
+            </div>
+
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="Signin" class="normal">Sign Up</a> </li>
+                </ul>
+            </div>
+            <i class="fa fa-align-justify" onclick="ShowMenu()"></i> 
+        </nav>
+
+
+        <div class="text-Box">
+            <h2>Financial Transactions Become Much Easier</h2>
+            <p>In our website you can make your Financial interests in an easy way<br> you can Invest,Request for a loan and Pay to another account </p>
+            <a href={{url_for('register_page')}} class="btn"> Join Us To Know More</a>
+        </div>
+    </section> 
+
+
+
+
+
+
+    <section class="course">
+        <h1>Services We Offer</h1>
+        <p>our Services are here and what you need to make them </p>
+
+        <div class="row">
+            <div class="course-col">
+            <h3> Investments</h3>
+            <p>in Investments you only need to choose the stock you want to invest in and how many stocks you want to buy then this will take from your balance and your investments is done then</p>
+          
+        </div>
+
+            <div class="course-col">
+            <h3> Requesting Loans</h3>
+            <p>Here you will choose the amount you want to request for and choose the type of the loan then your request will be done but you will still need to go to the bank to complete the steps</p>
+           </div>
+
+
+            <div class="course-col">
+            <h3> Payments</h3>
+            <p>in Payments you should know the bank account of the destination then this will take from your balance and this amount will be added to the destination balance</p>
+           </div>
+        </div>
+    </section>
+
+
+
+    <section class="campus">
+        <h1> Our Banks</h1>
+        <p>The banks that we deal with are illustrated here  </p>
+        
+
+        <div class="row">
+            <div class="campus-col">
+                <img src="../static/css/eduford_img/london.png" alt="">
+                <div class=layer>
+                    <h3>Banque Misr</h3>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src="../static/css/eduford_img/newyork.png" alt="">
+                <div class=layer>
+                    <h3> National Bank Of Egypt</h3>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src="../static/css/eduford_img/washington.png" alt="">
+                <div class=layer>
+                    <h3> CIB</h3>
+                </div>
+            </div>
+        </div>
+         
+    </section>
+
+
+    <section class="facilities">
+
+        <h1>Our Facilities</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam voluptate similique, commodi, nemo corrupti nam quaerat ad, laboriosam optio cumque distinctio aliquid soluta consequatur eligendi fuga assumenda repellendus mollitia incidunt.</p>
+        
+
+        <div class="row">
+            <div class="facilities-col">
+                <img src="../static/css/eduford_img/library.png" alt="">
+                <h3>World Class Library</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta libero possimus dolor. Eligendi officia ex ratione, in atque ab ea omnis, animi cupiditate repudiandae a vitae eum magnam sunt odit.</p>
+            </div>
+            <div class="facilities-col">
+                <img src="../static/css/eduford_img/basketball.png" alt="">
+                <h3>Largest Play Ground</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta libero possimus dolor. Eligendi officia ex ratione, in atque ab ea omnis, animi cupiditate repudiandae a vitae eum magnam sunt odit.</p>
+            </div>
+            <div class="facilities-col">
+                <img src="../static/css/eduford_img/cafeteria.png" alt="">
+                <h3>Tasty and Healthy food</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta libero possimus dolor. Eligendi officia ex ratione, in atque ab ea omnis, animi cupiditate repudiandae a vitae eum magnam sunt odit.</p>
+            </div> 
+
+
+        </div>
+    </section>
+
+
+
+
+
+
+    </section>
+
+    <section class="Contact">
+        <h1>To make Transactions in the largest companies<br>or to pay to other accounts easily</h1> 
+         <a href="" class="btn"> CONTACT US</a>
+
+
+    </section>
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, ad repudiandae velit dolore odit modi eaque, voluptate <br> dignissimos unde, porro dolor culpa nisi ullam nulla temporibus in sed debitis. Iusto!</p>
+        <div class="Social-media">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+
+        </div>
+    </section>
+
+
+    <script>
+         var navlinks=document.getElementById("navLinks");
+
+         function ShowMenu(){
+             navlinks.style.display="inline-block";
+             navlinks.style.opacity=1
+         }
+         function hideMenu(){
+             navlinks.style.display="none";
+             navlinks.style.opacity=0;
+         }
+         window.addEventListener("scroll",function()
+         {
+            var nav=document.querySelector("nav");
+            nav.classList.toggle("sticky",window.scrollY>20)
+         })
+
+
+
+    </script>
+</body>
+</html>
+
+

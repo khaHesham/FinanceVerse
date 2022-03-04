@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../static/css/AdminPayments.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class ="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href={{url_for('index')}}>
+                        <span class =icon><i class="fa fa-institution"></i></span>
+                        <span class ="title" > FinanceVerse</span>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="Profile" >
+                        <span class =icon><i class="fa fa-home"></i></span>
+                        <span class ="title" >Profile</span>
+                    </a>v
+
+                </li>
+                <li>
+                    <a href={{url_for('Admin_Trans')}}>
+                        <span class =icon> <i class="fa fa-exchange"></i></i></span>
+                        <span class ="title" > Transactions</span>
+                    </a>
+
+                </li>
+                <li>                             
+                    <a href={{url_for('Admin_Loans')}}>
+                        <span class =icon>  <i class="fa fa-line-chart"></i> </span>
+                        <span class ="title" > Loans</span>
+                    </a>
+
+                </li>
+                <li>
+                    <a href={{url_for('Admin_Payments')}}>
+                        <span class =icon><i class="fa fa-credit-card"></i></span>
+                        <span class ="title" > Payments</span>
+                    </a>
+
+                </li>
+                <li>
+                    <a href={{url_for('Admin_actions')}}>
+                        <span class =icon> <i class="fa fa-lock"></i></span>
+                        <span class ="title" > Make other Admin</span>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="Signin">
+                        <span class =icon> <i class="fa fa-sign-out"></i></span>
+                        <span class ="title" > Sign Out</span>
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+     <div class="main">
+         <div class="topbar">
+             <div class="toggle">
+                <i class="fa fa-bars"></i>
+             </div>   
+         </div>
+         <div class="cardbox">
+              <div class="card">
+                  <div>
+                      <div class="numbers">{{form.cust_num.data}}</div>
+                      <div class="cardName">Number Of Customers</div>
+                  </div>
+                    <div class="IconBox">
+                        <i class="fa fa-user"></i>
+                    </div>
+              </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">{{form.payments_num.data}}</div>
+                        <div class="cardName">Number Of Payments</div>
+                    </div>  
+                        <div class="IconBox">
+                            <i class="fa fa-dollar"></i>
+                        </div>
+
+                </div>
+                
+                    <div class="card">
+                        <div>
+                            <div class="numbers">{{form.Loans_num.data}}</div>
+                            <div class="cardName">Number Of Loans</div>
+                        </div>
+                            <div class="IconBox">
+                                <i class="fa fa-exchange"></i>
+                            </div>
+      
+                    </div>
+
+                        <div class="card">
+                            <div>
+                                <div class="numbers">{{form.Transctions_num.data}}</div>
+                                <div class="cardName">Transactions</div>
+                            </div>
+                                <div class="IconBox">
+                                    <i class="fa fa-line-chart"></i>
+                                </div>
+                        </div>
+
+          </div>
+
+          <div class="details">
+              <div class="Payments">
+                  <div class="cardHeader">
+                      <h2>Payments</h2>
+                      <a href={{url_for('Admin')}} class ='btn'>View recent Customers</a>
+                  </div>
+
+                  <table>
+                      <thead class="Head"> 
+                          <tr>
+                              <td>Sender</td>
+                              <td>Reciever</td>
+                              <td>Amount</td>
+                              <td>Date</td>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            {% for customer in data %}
+                            <tr>
+                              <td>
+                                {{customer['sender']}}
+                              </td>
+                              <td>
+                                {{customer['reciever']}}
+                              </td>
+                              <td>
+                                {{customer['value']}}
+                              </td>
+                              <td>
+                                {{customer['Date']}}
+                              </td>
+                            </tr>
+                        {% endfor %}
+                          </tr>
+
+
+                      </tbody>
+                  </table>
+              </div>
+            </div>
+
+          </div>
+
+     </div>
+
+
+
+    
+    <script>
+        let list=document.querySelectorAll('.navigation li');
+        let navig=document.querySelector('.navigation');
+        let main=document.querySelector('.main');
+        let toggle=document.querySelector('.toggle');
+
+        toggle.onclick = function(){
+            navig.classList.toggle('active');
+            main.classList.toggle('active2');
+        }
+        function activelink(){
+            list.forEach((item) => 
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item) =>
+        item.addEventListener('mouseover',activelink));
+    </script>
+    
+</body>
+</html>

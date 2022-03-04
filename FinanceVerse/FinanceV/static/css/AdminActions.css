@@ -1,0 +1,327 @@
+body{
+    background:linear-gradient(to right,#185a9d,#43cea2 );
+    overflow: hidden;
+}
+.header{
+    width:100%;
+    position: absolute;
+    top:0;
+    height: 100px;
+    display: flex;
+}
+.header .logo i{
+    display: inline;
+    font-size: 25px;
+}
+.header h1:hover{
+    color:#0058af;
+}
+.header h1 .verse:hover{
+color:#19b13d;
+}
+.header h1{
+    background:linear-gradient(to right,#6dbbff,#6fb9fa,#4aaafd,#0088ff,#0058af);
+    background-size:400%;
+    font-weight: 600px;
+    -webkit-text-fill-color:transparent;
+    -webkit-background-clip: text;
+    animation: animate 15s ease-out infinite;
+    animation-direction: reverse;
+    margin-bottom: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.header h1 .verse{
+background:linear-gradient(to right,#72c77c,#58ca65,#3ec94e,#1cca30,#19b13d);
+background-size:400%;
+-webkit-text-fill-color:transparent;
+-webkit-background-clip: text;
+animation: animate 15s ease-out infinite ;
+animation-direction: reverse;
+cursor: pointer;
+}
+
+@keyframes animate {
+    0%{
+        background-position: 0%;
+    }
+    25%{
+        background-position: 100%;
+    }
+
+    50%{
+        background-position: 200%;
+    }
+    
+    75%{
+        background-position: 300%;
+    }
+    100%{
+        background-position: 400%;
+    }
+    
+}
+
+
+.verse{
+
+    text-decoration: none;
+}
+.navOne{
+    display:flex;
+    padding:0% 2%;
+    justify-content: space-between;
+    align-items: center ;
+    position: fixed;
+    top :0;
+    width: 100%;
+    left:0;
+    transition: 0.6s;
+    z-index: 100;
+    background:rgb(45, 44, 44) ;
+}
+.navOne img{
+    width:200px;
+}
+.navOne.sticky{
+    background: rgb(45, 44, 44);
+    padding: 0% 3.5%;
+    padding-top: 10px;
+}
+
+.nav-links{
+    flex:1;
+    text-align:right;
+    position: relative;
+    right:5%;
+    flex-direction: row;
+    top:15px
+}
+.nav-links ul li{
+    list-style: none;
+    display:inline-block;
+    padding: 8px 10px;
+    position:static;
+    color:rgb(255, 255, 255);
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.Specialbtn{
+    border:2px solid white;
+    padding:8px 10px;
+    border-radius: 3%;
+    color: white;
+    background:transparent;
+    text-decoration: none;
+    display:inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.Specialbtn:hover{
+    border-color: #0088ff;
+    background:#0088ff;
+    transition: 0.7s;
+    color:rgb(255, 255, 255)
+}
+
+.nav-links ul li a{
+    color:seashell;
+    text-decoration: none;
+}
+.nav-links ul .normal::after{
+    content:'';
+    width:0%;
+    height:2px; 
+    background:#0088ff;
+    display:block;
+    margin: auto;
+    transition: 0.6s;
+}
+.nav-links ul .normal:hover::after{
+    width:100%
+}
+
+.container{
+    background-color: #fff;
+    width :540px;
+    height:480px;
+    position:absolute;
+    top:53%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    box-shadow:2px 5px 20px rgba(119,119,119,0.5);
+}
+.left-box{
+    float:left;
+    top:-5%;
+    left:5%;
+    position: absolute;
+    width:15%;
+    height:110%;
+    background: #237dd6;
+    box-shadow:3px 3px 20px rgba(119,119,119,0.5);
+    border:.1em solid #fff;
+}
+
+nav a{
+    margin-top:5px;
+    list-style: none;
+    padding :25px;
+    color:white;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-around;
+    transition: all 0.3s ease-in-out;
+}
+
+
+nav a:hover{
+    color:#103b67;
+    cursor:pointer;
+    transform: scale(1.3);
+}
+
+.right-box{
+    width:80%;
+    margin-left: 30%;
+}
+.tabshow{
+    transition: all 0.5;
+    width: 80%;
+}
+
+h1{
+    color:#237dd6;
+    font-size: 1.5rem;
+    margin-top:10%;
+    margin-bottom: 30px;
+}
+h2{
+    color:#777;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-left: 2px;
+}
+
+
+.input,p{
+    border:0;
+    outline: none;
+    background: transparent;
+    border-bottom: 2px solid #103b67;
+    width:80%;
+    padding: 7px 0;
+    color:#777;
+    font-size: 10px;
+}
+
+.btn{
+    margin-top:40px;
+    margin-left: 70px;
+    text-transform: uppercase;
+    border:0;
+    color:white;
+    background :#237dd6;
+    padding: 7px 15px;
+    box-shadow: 2px 2px 4 px 0 px rgba(0,0,0,0.2);
+    cursor:pointer;
+    transition: 0.7s;
+    border-radius: 10px;
+}
+.btn:hover{
+    background: #103b67;
+}
+.tabshow{
+    display: none;
+}
+.Deleting{
+    display: block;
+}
+.custom-select {
+    position: relative;
+    font-family: Arial;
+  }
+  
+  .custom-select select {
+    display: none; /*hide original SELECT element: */
+  }
+  
+  .select-selected {
+    background-color: #237dd6;
+  }
+  
+  /* Style the arrow inside the select element: */
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  
+  /* Point the arrow upwards when the select box is open (active): */
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+  }
+  
+  /* style the items (options), including the selected item: */
+  .select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+  }
+  
+  /* Style items (options): */
+  .select-items {
+    position: absolute;
+    background-color: #237dd6;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  
+  /* Hide the items when the select box is closed: */
+  .select-hide {
+    display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+    background-color: rgb(6, 5, 75);
+  }
+  
+.PassWord{
+    display: block;
+    width: 80%;
+    margin-top: 5px;
+    padding:12px;
+    border-radius: 15px;
+    outline: none;
+    color:#101010;
+}
+.Update p{
+    border: none;
+    font-size: 15px;
+    margin-left: 10px;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+}
+
+
+
+
+
+
+
+

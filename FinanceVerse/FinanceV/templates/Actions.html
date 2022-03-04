@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Actions</title>
+    <link rel="stylesheet" href="../static/css/Actions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="navOne">
+            <div class="logo">
+                <h1 class="logotext">
+                    <i class="fa fa-institution"></i>
+                    <span>Finance</span><span class=verse>Ver$e</span>
+                </h1>
+                </a>
+            </div>
+
+            <div class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="trans_History" class="normal">Account History</a> </li>
+                    <li><a href="Profile" class="normal">Profile</a> </li>
+                    <li><a href="Signin" class="normal">Log Out</a> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="container">
+        <div class="left-box">
+            <nav>
+               <a onclick="CreditClick()" class="tab active" id="CreditCardIcon">
+                <i class="fa fa-credit-card" ></i>
+            </a>
+            <nav>
+                <a onclick="HomeClick()" class="tab" id="HomeIcon">
+                    <i class="fa fa-home" ></i>
+             </a>
+             <nav>
+                <a onclick="Chartclick()" class="tab" id="ChartIcon">
+                    <i class="fa fa-line-chart"></i>
+             </a>
+            </nav>
+        </div>
+
+        <div class="right-box">
+
+            <div class="profile tabshow" id="Payment">
+                <form action="" method="post">
+                    {{payment_form.csrf_token}}
+
+                    <h1> Payment to Another Account</h1>
+                    <h2>Amount of Money</h2>
+                    {{payment_form.Value(class="input")}}
+      
+                    <h2>Reciever Account ID</h2>
+                    {{payment_form.destination_id(class="input")}}
+      
+      
+                    {{payment_form.Pay(class="btn",type="submit",value="Pay")}}
+                </form>
+            </div>
+
+              <div class="Payment tabshow" id="Loan">
+                <form action="" method="post">
+                    {{loan_form.csrf_token}}
+
+                    <h1> Requesting The Loan</h1>
+                    <h2>Amount of Money</h2>
+                    {{loan_form.Amount(class="input")}}
+    
+                    <h2>Type Of Loan</h2>
+
+                    <div class="custom-select" style="width:200px;">
+                        {{loan_form.Type()}}
+                    </div>
+
+                    {{loan_form.Request_Loan(class="btn",type="submit",value="Request A Loan")}}
+
+                  </form>
+              </div>
+
+              <div class="Subscribtion tabshow" id="Transactions">
+                <form action="" method="post">
+                    {{transaction_form.csrf_token}}
+                    <h1> Making a Transaction</h1>
+                    <h2>Amount</h2>
+                    {{transaction_form.Amnt(class = "input")}}
+  
+                    <h2>Choose the stock</h2>
+
+                    <div class="custom-select" style="width:200px;">
+                        {{transaction_form.stock_id()}}
+                    </div>
+  
+                    {{transaction_form.Invest(class="btn",type="submit",value="Invest")}}
+                  </form>
+              </div>
+
+        </div>
+    </div>
+
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+        
+        <div class="{{category}} show" id="Alert">
+            <span class="excl-circle"> <i class="fa fa-exclamation-circle"></i> </span>
+            <span class="msg"> {{ message }}</span>
+            <span class="close-btn" onclick="Hidemsg()"> <i class="fa fa-times"></i></span>
+        </div>
+        
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <script>
+        var OurButton=document.getElementsByClassName("btn");
+        var OurAlert=document.getElementById("Alert");
+        function Hidemsg(){
+            OurAlert.classList.add("hide");
+            OurAlert.classList.remove("show");
+        }
+    </script>
+
+
+   <script src="../static/js/Actions.js"></script>
+
+</body>
+</html>

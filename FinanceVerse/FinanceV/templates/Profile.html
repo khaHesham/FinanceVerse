@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile page</title>
+    <link rel="stylesheet" href="../static/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="header">
+
+        <div class="navOne">
+            <div class="logo">
+                <h1 class="logotext">
+                    <i class="fa fa-institution"></i>
+                    <span>Finance</span><span class=verse>Ver$e</span>
+                </h1>
+                </a>
+            </div>
+
+            <div class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="trans_History" class="normal">Account History</a> </li>
+                    <li><a href="Actions" class="normal">Account Actions</a> </li>
+                    
+                    {% if is_admin %}
+                        <li><a href="admin" class="normal">Admin</a> </li>
+                    {% endif %}
+
+                    <li><a href="Logout" class="normal">Log Out</a> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <div class="left-box">
+            <nav>
+               <a onclick="UserClick()" class="tab active" id="ProfileIcon">
+                <i class="fa fa-user"></i>
+            </a>
+            <nav>
+                <a onclick="CreditCardClick()" class="tab" id="CreditCardIcon">
+                 <i class="fa fa-credit-card"></i>
+             </a>
+             <nav>
+                <a onclick="TVclick()" class="tab" id="TVIcon">
+                 <i class="fa fa-tv"></i>
+             </a>
+             <nav>
+                <a onclick="TasksClick()" class="tab" id="TasksIcon">
+                 <i class="fa fa-tasks"></i>
+             </a>
+             <nav>
+                <a onclick="SettingClick()" class="tab" id="SettingIcon">
+                 <i class="fa fa-cog"></i>
+             </a>
+            </nav>
+            <nav>
+                <a onclick="DeletingClick()" class="tab" id="DeleteIcon">
+                <i class="fa fa-close"></i>
+             </a>
+            </nav>
+            <nav>
+                <a onclick="PassClick()" class="tab" id="LockIcon">
+                    <i class="fa fa-lock"></i>
+             </a>
+            </nav>
+        </div>
+
+        <div class="right-box">
+
+        <form action="" method="post">
+            <div class="profile tabshow" id="profile">
+              <h1> Personal Info</h1>
+              <h2>Full Name</h2>
+              
+              {{Profile_form.Name(class="input",readonly=true)}}
+
+              <h2>Username</h2>
+              
+              {{Profile_form.Username(class="input",readonly=true)}}
+
+              <h2>Address</h2>
+             
+              {{Profile_form.Address(class="input",readonly=true)}}
+
+              <h2>Phone</h2>
+              
+              {{Profile_form.Phone(class="input",readonly=true)}}
+
+
+            </div>
+        </form>
+
+        <form action="" method="post">
+              <div class="Payment tabshow" id="payment">
+                <h1> Credit Card Info</h1>
+                <h2>Balance</h2>
+                {{credit_form.Credit_Balance(class = "input",readonly=true)}}
+  
+                <h2>Credit Card ID</h2>
+                {{credit_form.Credit_ID(class = "input",readonly=true)}}
+
+                <h2>Account ID</h2>
+                {{credit_form.acc_id(class = "input",readonly=true)}}
+  
+
+              </div>
+        </form>
+
+        <form action="" method="post">
+              <div class="Subscribtion tabshow" id="subscribtion">
+                <h1> Bank Account Info</h1>
+                <h2>Balance</h2>
+                {{bank_form.Acc_Balance(class = "input",readonly=true)}}
+  
+                <h2>Bank ID</h2>
+                {{bank_form.Bank_id(class = "input",readonly=true)}}
+  
+                <h2>Bank Name</h2>
+                {{bank_form.Bank_Name(class = "input",readonly=true)}}
+  
+
+              </div>
+        </form>
+
+        <form action="" method="post">
+            <div class="Privacy tabshow" id="privacy">
+            <h1> Your Assets</h1>
+            <table>
+                <thead class="Head"> 
+                    <tr>
+                        <td>Type</td>
+                        <td>Cost </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for asset in assets %}
+                    <tr>
+                        <td>{{asset['Type']}}</td>
+                        <td>{{asset['Cost']}} </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            
+            </table>
+            </div>
+        </form>
+
+        <form action="" method="post">
+            <div class="Settings tabshow" id="settings">
+            {{Add_Asset.csrf_token}}
+            <h1> Add An Asset</h1>
+
+            <h2>Cost</h2>
+            {{Add_Asset.Cost(class="input")}}
+
+            <h2>Type</h2>
+            {{Add_Asset.Type(class="input")}}
+
+            {{Add_Asset.Add(class="btn",type="submit",value="Add")}}
+
+            </div>
+        </form>
+
+        <form action="" method="post">
+        <div class="Deleting tabshow" id="Deleting">
+            {{Delete_Asset.csrf_token}}
+            <h1> Delete An Asset</h1>
+            <h2>Cost</h2>
+            {{Delete_Asset.cst(class="input")}}
+            <h2>Type</h2>
+            {{Delete_Asset.typ(class="input")}}
+
+            {{Delete_Asset.delete(class="btn",type="submit",value="Delete")}}
+            </div>
+        </form>
+
+        <form action="" method="post">
+          <div class="Update tabshow" id="Update">
+            {{update_pass.csrf_token}}
+            <h1> Update Password</h1>
+
+            <h2>New Password</h2>
+            {{update_pass.password(type="password", class="PassWord" ,placeholder="Write your new password here", id="password")}}
+
+            <h2>Confirm New Password</h2>
+            {{update_pass.check_pass(type="password", class="PassWord" ,placeholder="Confirm your new password", id="Confirm_password")}}
+            <p id="msg">
+            </p>
+            {{update_pass.submit(class="btn", type="submit", value="Update",onclick="CheckPassword()")}}
+          </div>
+        </form>
+        </div>
+    </div>
+
+
+  
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+        
+        <div class="{{category}} show" id="Alert">
+            <span class="excl-circle"> <i class="fa fa-exclamation-circle"></i> </span>
+            <span class="msg"> {{ message }}</span>
+            <span class="close-btn" onclick="Hidemsg()"> <i class="fa fa-times"></i></span>
+        </div>
+        
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <script>
+        var OurButton=document.getElementsByClassName("btn");
+        var OurAlert=document.getElementById("Alert");
+        function Hidemsg(){
+            OurAlert.classList.add("hide");
+            OurAlert.classList.remove("show");
+        }
+    </script>
+   <script src="../static/js/Profile.js"></script>
+
+</body>
+</html>
